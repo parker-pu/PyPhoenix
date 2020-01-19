@@ -29,7 +29,10 @@ Usage
 
 For example:
 
-.. code:: python
+.. code::
+
+    from pyphoenix.phoenix import PhoenixDB
+
     sql = "SELECT * FROM user"
     pd = PhoenixDB(
         url = "jdbc:127.0.0.1:2181;",
@@ -38,8 +41,8 @@ For example:
         jar_file = "xxx/phoenix-4.7.0-clabs-phoenix1.3.0-client.jar"
     )
     data = pd.execute(sql=sql)
-    print(data)
-
+    for row in data:
+        print(row)
     pass
 
 Changelog
